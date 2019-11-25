@@ -14,7 +14,7 @@ You may assume that each input would have exactly one solution, and you may not 
 
 public class Problem1 {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution1 solution = new Solution1();
 
         int[] input = {2, 7, 11, 15};
         int[] result = solution.twoSum(input, 9);
@@ -22,7 +22,7 @@ public class Problem1 {
     }
 }
 
-class Solution {
+class Solution1 {
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
 
