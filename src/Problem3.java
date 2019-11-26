@@ -1,43 +1,51 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /*
-Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
+Given a string, find the length of the longest substring without repeating characters.
 
-  Example:
-    Given nums = [2, 7, 11, 15], target = 9,
-    Because nums[0] + nums[1] = 2 + 7 = 9,
-    return [0, 1].
+  Example 1:
+    Input: "abcabcbb"
+    Output: 3
+    Explanation: The answer is "abc", with the length of 3.
+
+  Example 2:
+    Input: "bbbbb"
+    Output: 1
+    Explanation: The answer is "b", with the length of 1.
+
+  Example 3:
+    Input: "pwwkew"
+    Output: 3
+    Explanation: The answer is "wke", with the length of 3.
+                 Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
  */
 
-public class Problem1 {
+public class Problem3 {
     public static void main(String[] args) {
-        Solution1 solution = new Solution1();
+        Solution3 solution = new Solution3();
 
-        int[] input = {2, 7, 11, 15};
-        int[] result = solution.twoSum(input, 9);
-        System.out.println(Arrays.toString(result));
+        String input = "abcabcbb";
+        System.out.println(solution.lengthOfLongestSubstring(input));
     }
 }
 
-class Solution1 {
-    public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap<>();
+class Solution3 {
+    public int lengthOfLongestSubstring(String s) {
+        int length = s.length();
+        int longestLength = 0, i = 0, j = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-            map.put(nums[i], i);
-        }
+        Set<Character> set = new HashSet<>();
 
-        for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i];
+        while (i < length && j < length) {
+            if (!set.contains(s.charAt(j))) {
+                set.add(s.charAt(j++));
+                longestLength = Math.max(longestLength, j - i);
 
-            if (map.containsKey(complement) && map.get(complement) != i) {
-                return new int[]{i, map.get(complement)};
+            } else {
+                set.remove(s.charAt(i++));
             }
         }
 
-        return null;
+        return longestLength;
     }
 }
