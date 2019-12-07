@@ -15,16 +15,16 @@ If there is no common prefix, return an empty string "".
 
 import java.util.*;
 
-public class Problem13 {
+public class Problem15 {
     public static void main(String[] args) {
-        Solution13 solution = new Solution13();
+        Solution15 solution = new Solution15();
 
         int[] input = {-1,0,1,2,-1,-4};
         System.out.println(solution.threeSum(input));
     }
 }
 
-class Solution13 {
+class Solution15 {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> output = new ArrayList<>();
 

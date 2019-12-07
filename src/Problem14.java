@@ -1,52 +1,54 @@
 /*
-Given a linked list, remove the n-th node from the end of list and return its head.
+Write a function to find the longest common prefix string amongst an array of strings.
 
-  Example:
-    Given linked list: 1->2->3->4->5, and n = 2.
+If there is no common prefix, return an empty string "".
 
-    After removing the second node from the end, the linked list becomes 1->2->3->5.
+  Example 1:
+    Input: ["flower","flow","flight"]
+    Output: "fl"
 
-Note:
-Given n will always be valid.
+  Example 2:
+    Input: ["dog","racecar","car"]
+    Output: ""
+    Explanation: There is no common prefix among the input strings.
  */
 
 public class Problem14 {
     public static void main(String[] args) {
         Solution14 solution = new Solution14();
 
-        int[] input = {-1, 0, 1, 2, -1, -4};
-        int n = 2;
-
-        ListNode.displayListNode(solution.removeNthFromEnd(ListNode.createListNode(input), n));
+        String[] input = {"dog","racecar","car"};
+        System.out.println(solution.longestCommonPrefix(input));
     }
 }
 
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- * int val;
- * ListNode next;
- * ListNode(int x) { val = x; }
- * }
- */
 class Solution14 {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode element = dummy;
-        ListNode delayedElement = dummy;
-
-        for (int i = 0; i <= n; i++) {
-            element = element.next;
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
         }
 
-        while (element != null) {
-            element = element.next;
-            delayedElement = delayedElement.next;
+        if (strs.length == 1) {
+            return strs[0];
         }
 
-        delayedElement.next = delayedElement.next.next;
+        StringBuilder output = new StringBuilder();
+        for (int i = 0; i < strs[0].length(); i++) {
+            String currentChar = strs[0].substring(i, i+1);
 
-        return dummy.next;
+            for (int j = 1; j < strs.length; j++) {
+                if (i + 1 > strs[j].length()) {
+                    return output.toString();
+                }
+
+                if (!currentChar.equals(strs[j].substring(i, i+1))) {
+                    return output.toString();
+                }
+            }
+
+            output.append(currentChar);
+        }
+
+        return output.toString();
     }
 }
