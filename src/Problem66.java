@@ -1,54 +1,50 @@
 /*
-Implement int sqrt(int x).
+Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
 
-Compute and return the square root of x, where x is guaranteed to be a non-negative integer.
+The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit.
 
-Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.
+You may assume the integer does not contain any leading zero, except the number 0 itself.
 
   Example 1:
 
-    Input: 4
-    Output: 2
+    Input: [1,2,3]
+    Output: [1,2,4]
+    Explanation: The array represents the integer 123.
 
   Example 2:
 
-    Input: 8
-    Output: 2
-    Explanation: The square root of 8 is 2.82842..., and since
-                 the decimal part is truncated, 2 is returned.
+    Input: [4,3,2,1]
+    Output: [4,3,2,2]
+    Explanation: The array represents the integer 4321.
  */
 
+
+import java.util.Arrays;
 
 public class Problem66 {
     public static void main(String[] args) {
         Solution66 solution = new Solution66();
 
-        System.out.println(solution.mySqrt(22));
+        int[] digits = {1, 2, 3, 4};
+        System.out.println(Arrays.toString(solution.plusOne(digits)));
     }
 }
 
 class Solution66 {
-    public int mySqrt(int x) {
-        if (x == 0) {
-            return 0;
-        }
+    public int[] plusOne(int[] digits) {
+        for (int i = digits.length - 1; i >= 0; i--) {
+            digits[i]++;
 
-        int start = 1, end = x;
-
-        while (start < end) {
-            int middle = start + (end - start) / 2;
-
-            if ((middle <= x / middle) && ((middle + 1) > x / (middle + 1))) {
-                return middle;
+            if (digits[i] / 10 == 0) {
+                return digits;
             } else {
-                if (middle > x / middle) {
-                    end = middle;
-                } else {
-                    start = middle + 1;
-                }
+                digits[i] = 0;
             }
         }
 
-        return start;
+        int[] newNumber = new int[digits.length + 1];
+        newNumber[0] = 1;
+
+        return newNumber;
     }
 }
