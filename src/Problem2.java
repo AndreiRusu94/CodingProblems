@@ -45,11 +45,10 @@ class ListNode {
     }
 
     public static void displayListNode(ListNode node) {
-        while (node.next != null) {
+        while (node != null) {
             System.out.print(node.val);
             node = node.next;
         }
-        System.out.println(node.val);
     }
 }
 
