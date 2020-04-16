@@ -1,12 +1,16 @@
 /*
-Reverse a linked list from position m to n. Do it in one-pass.
-
-Note: 1 ≤ m ≤ n ≤ length of list.
+Given a binary tree, return the inorder traversal of its nodes' values.
 
     Example:
 
-    Input: 1->2->3->4->5->NULL, m = 2, n = 4
-    Output: 1->4->3->2->5->NULL
+    Input: [1,null,2,3]
+       1
+        \
+         2
+        /
+       3
+
+    Output: [1,3,2]
 */
 
 import java.util.ArrayList;
