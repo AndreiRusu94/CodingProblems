@@ -54,6 +54,16 @@ class TreeNode {
 
         return current;
     }
+
+    public static void inorder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        System.out.println(root.val);
+        inorder(root.left);
+        inorder(root.right);
+    }
 }
 
 class Solution94 {
