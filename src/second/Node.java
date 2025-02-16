@@ -1,15 +1,20 @@
 package second;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Node {
     int val;
     Node next;
     Node random;
+    public List<Node> neighbors;
 
     public Node(int val) {
         this.val = val;
         this.next = null;
         this.random = null;
+        this.neighbors = new ArrayList<>();
     }
 
     public static Node createListNode(int[] values) {
