@@ -1,30 +1,33 @@
 package second;
 /*
-There are some spherical balloons taped onto a flat wall that represents the XY-plane. The balloons are represented as a 2D integer array points where points[i] = [xstart, xend] denotes a balloon whose horizontal diameter stretches between xstart and xend. You do not know the exact y-coordinates of the balloons.
+Design an algorithm that collects daily price quotes for some stock and returns the span of that stock's price for the current day.
 
-Arrows can be shot up directly vertically (in the positive y-direction) from different points along the x-axis. A balloon with xstart and xend is burst by an arrow shot at x if xstart <= x <= xend. There is no limit to the number of arrows that can be shot. A shot arrow keeps traveling up infinitely, bursting any balloons in its path.
+The span of the stock's price in one day is the maximum number of consecutive days (starting from that day and going backward) for which the stock price was less than or equal to the price of that day.
 
-Given the array points, return the minimum number of arrows that must be shot to burst all balloons.
+For example, if the prices of the stock in the last four days is [7,2,1,2] and the price of the stock today is 2, then the span of today is 4 because starting from today, the price of the stock was less than or equal 2 for 4 consecutive days.
+Also, if the prices of the stock in the last four days is [7,34,1,2] and the price of the stock today is 8, then the span of today is 3 because starting from today, the price of the stock was less than or equal 8 for 3 consecutive days.
+Implement the StockSpanner class:
+
+StockSpanner() Initializes the object of the class.
+int next(int price) Returns the span of the stock's price given that today's price is price.
 
 Example 1:
 
-Input: points = [[10,16],[2,8],[1,6],[7,12]]
-Output: 2
-Explanation: The balloons can be burst by 2 arrows:
-- Shoot an arrow at x = 6, bursting the balloons [2,8] and [1,6].
-- Shoot an arrow at x = 11, bursting the balloons [10,16] and [7,12].
-Example 2:
+Input
+["StockSpanner", "next", "next", "next", "next", "next", "next", "next"]
+[[], [100], [80], [60], [70], [60], [75], [85]]
+Output
+[null, 1, 1, 1, 2, 1, 4, 6]
 
-Input: points = [[1,2],[3,4],[5,6],[7,8]]
-Output: 4
-Explanation: One arrow needs to be shot for each balloon for a total of 4 arrows.
-Example 3:
-
-Input: points = [[1,2],[2,3],[3,4],[4,5]]
-Output: 2
-Explanation: The balloons can be burst by 2 arrows:
-- Shoot an arrow at x = 2, bursting the balloons [1,2] and [2,3].
-- Shoot an arrow at x = 4, bursting the balloons [3,4] and [4,5].
+Explanation
+StockSpanner stockSpanner = new StockSpanner();
+stockSpanner.next(100); // return 1
+stockSpanner.next(80);  // return 1
+stockSpanner.next(60);  // return 1
+stockSpanner.next(70);  // return 2
+stockSpanner.next(60);  // return 1
+stockSpanner.next(75);  // return 4, because the last 4 prices (including today's price of 75) were less than or equal to today's price.
+stockSpanner.next(85);  // return 6
  */
 
 import java.util.ArrayDeque;
