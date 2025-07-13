@@ -89,4 +89,112 @@ public class TreeNode {
         return root;
     }
 
+    public static TreeNode insertNode(TreeNode root, int data) {
+        if (root == null) {
+            root = new TreeNode(data);
+            return root;
+        }
+
+        Deque<TreeNode> dq = new ArrayDeque<>();
+        dq.add(root);
+
+        while (!dq.isEmpty()) {
+            TreeNode curr = dq.poll();
+
+            if (curr.left != null) {
+                dq.add(curr.left);
+            } else {
+                curr.left = new TreeNode(data);
+                return root;
+            }
+
+            if (curr.right != null) {
+                dq.add(curr.right);
+            } else {
+                curr.right = new TreeNode(data);
+                return root;
+            }
+        }
+
+        return root;
+    }
+
+    public static TreeNode deleteNode(TreeNode root, int key) {
+        if (root == null) {
+            return null;
+        }
+
+        if (root.left == null && root.right == null) {
+            if (root.val == key) {
+                return null;
+            } else {
+                return root;
+            }
+        }
+
+        Deque<TreeNode> dq = new ArrayDeque<>();
+        dq.offer(root);
+
+        TreeNode curr = null;
+        TreeNode keyNode = null;
+
+        while (!dq.isEmpty()) {
+            curr = dq.poll();
+
+            if (curr.val == key) {
+                keyNode = curr;
+            }
+
+            if (curr.left != null) {
+                dq.add(curr.left);
+            }
+
+            if (curr.right != null) {
+                dq.add(curr.right);
+            }
+        }
+
+        if (keyNode != null) {
+            keyNode.val = curr.val;
+            deleteDeepest(root, curr);
+        }
+
+        return root;
+    }
+
+    private static void deleteDeepest(TreeNode root, TreeNode dNote) {
+        Deque<TreeNode> dq = new ArrayDeque<>();
+        dq.add(root);
+
+        TreeNode curr = null;
+        while (!dq.isEmpty()) {
+            curr = dq.poll();
+
+            if (curr == dNote) {
+                curr = null;
+                dNote = null;
+                return;
+            }
+
+            if (curr.right != null) {
+                if (curr.right == dNote) {
+                    curr.right = null;
+                    dNote = null;
+                    return;
+                }
+                dq.add(curr.right);
+            }
+
+            if (curr.left != null) {
+                if (curr.left == dNote) {
+                    curr.left = null;
+                    dNote = null;
+                    return;
+                }
+                dq.add(curr.left);
+            }
+        }
+
+    }
+
 }
