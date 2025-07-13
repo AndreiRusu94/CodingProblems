@@ -6,6 +6,7 @@ import java.util.Deque;
 public class TreeNode {
     int val;
     TreeNode left, right;
+    TreeNode next;
 
     public TreeNode(int val) {
         this.val = val;
