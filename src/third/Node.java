@@ -2,6 +2,7 @@ package third;
 
 import static third.TreeNode.BFS;
 import static third.TreeNode.inOrderDFS;
+import static third.TreeNode.insertLevelOrder;
 import static third.TreeNode.postOrderDFS;
 import static third.TreeNode.preOrderDFS;
 
@@ -21,5 +22,9 @@ public class Node {
         postOrderDFS(root);
         System.out.print("\nLevel order: ");
         BFS(root);
+
+        System.out.print("\nInsert level order (complete binary tree): ");
+        TreeNode tree = insertLevelOrder(new int[]{1, 2, 3, 4, 5, 6}, 0);
+        inOrderDFS(tree);
     }
 }

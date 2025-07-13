@@ -77,4 +77,16 @@ public class TreeNode {
         return current;
     }
 
+    public static TreeNode insertLevelOrder(int[] nums, int i) {
+        TreeNode root = null;
+
+        if (i < nums.length) {
+            root = new TreeNode(nums[i]);
+            root.left = insertLevelOrder(nums, i * 2 + 1);
+            root.right = insertLevelOrder(nums, i * 2 + 2);
+        }
+
+        return root;
+    }
+
 }
