@@ -17,7 +17,6 @@ Input: s = "aabaaab", k = 2
 Output: 7
 Explanation: The entire string "aabaaab" has exactly 2 unique characters 'a' and 'b', making it the longest valid substring.
 
-Try it on GfG Practice
 */
 
 public class ProblemDSA10 {
