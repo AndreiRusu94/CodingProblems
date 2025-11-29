@@ -1,6 +1,7 @@
 package third;
 /*
-Given an array of strings, find if the given strings can be chained to form a circle. A string X can be put before another string Y in a circle if the last character of X is the same as the first character of Y.
+Given an array of strings, find if the given strings can be chained to form a circle. A string X can be put before another string Y in a circle
+if the last character of X is the same as the first character of Y.
 
 Examples:
 
@@ -49,7 +50,7 @@ public class ProblemDSA38 {
     public static void main(String[] args) {
         SolutionDSA38 solution = new SolutionDSA38();
 
-        System.out.println("Can be chained: " + solution.possibleOrderAmongString(new String[]{"ijk”, “kji”, “abc”, “cba"}));
+        System.out.println("Can be chained: " + solution.possibleOrderAmongString(new String[]{"ajk", "kjc", "aba", "cba"}));
     }
 }
 

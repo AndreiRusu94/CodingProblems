@@ -1,6 +1,7 @@
 package third;
 /*
-Given an array arr[] of n integers, construct a product array res[] (of the same size) such that res[i] is equal to the product of all the elements of arr[] except arr[i].
+Given an array arr[] of n integers, construct a product array res[] (of the same size) such that res[i] is equal to the product of all the
+elements of arr[] except arr[i].
 
 Example:
 

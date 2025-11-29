@@ -1,6 +1,8 @@
 package third;
 /*
-Given a undirected graph represented by an adjacency list adj, where each adj[i] represents the list of vertices connected to vertex i. Perform a Breadth First Search (BFS) traversal starting from vertex 0, visiting vertices from left to right according to the adjacency list, and return a list containing the BFS traversal of the graph.
+Given a undirected graph represented by an adjacency list adj, where each adj[i] represents the list of vertices connected to vertex i.
+Perform a Breadth First Search (BFS) traversal starting from vertex 0, visiting vertices from left to right according to the adjacency list, and return a list
+containing the BFS traversal of the graph.
 
 Examples:
 

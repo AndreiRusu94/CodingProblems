@@ -45,6 +45,8 @@ class SolutionDSA90 {
     public int longestIncreasingPath(int[][] matrix) {
         int n = matrix.length;
         int m = matrix[0].length;
+        String s = "a";
+
         int[][] memo = new int[n][m];
         for (int[] row : memo) {
             Arrays.fill(row, -1);

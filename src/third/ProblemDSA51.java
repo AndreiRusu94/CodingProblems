@@ -1,6 +1,7 @@
 package third;
 /*
-Given a string s and an integer k, find the lexicographically largest string that can be obtained by removing exactly k characters from s, while preserving the relative order of the remaining characters.
+Given a string s and an integer k, find the lexicographically largest string that can be obtained by removing exactly k characters from s, while preserving the relative
+order of the remaining characters.
 
 Examples:
 
@@ -17,11 +18,15 @@ Output: "jkie"
 Explanation: Removing "a" and "c" gives "jkie", which is the largest string possible in dictionary order.
 */
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class ProblemDSA51 {
     public static void main(String[] args) {
         SolutionDSA51 solution = new SolutionDSA51();
 
         System.out.println(solution.maxSubseq("zebraz", 3));
+        System.out.println(solution.maxSubseq2("zebraz", 3));
     }
 }
 
@@ -42,5 +47,26 @@ class SolutionDSA51 {
         return output.substring(0, s.length() - k);
     }
 
+    public String maxSubseq2(String s, int k) {
+        Deque<Character> stack = new ArrayDeque<>();
+        for (char c : s.toCharArray()) {
+            while (!stack.isEmpty() && k > 0 && stack.peekLast() < c) {
+                stack.pollLast();
+                k--;
+            }
+            stack.add(c);
+        }
+
+        while (k-- > 0 && !stack.isEmpty()) {
+            stack.pollLast();
+        }
+
+        StringBuilder result = new StringBuilder();
+        for (char c : stack) {
+            result.append(c);
+        }
+
+        return result.toString();
+    }
 
 }

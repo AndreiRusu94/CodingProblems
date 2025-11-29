@@ -1,6 +1,7 @@
 package third;
 /*
-Given a string s, your task is to determine the length of the longest substring that lies between two identical characters in the string. The substring should exclude the characters at the two ends. If no such pair of identical characters exists, return -1.
+Given a string s, your task is to determine the length of the longest substring that lies between two identical characters in the string.
+The substring should exclude the characters at the two ends. If no such pair of identical characters exists, return -1.
 
 Examples:
 

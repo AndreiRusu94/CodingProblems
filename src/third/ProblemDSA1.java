@@ -1,7 +1,7 @@
 package third;
 /*
 You are given a sorted array arr[] containing unique integers, a number k, and a target value x. Your goal is to return exactly k elements from the
- rray that are closest to x, excluding x itself if it is present in the array.
+array that are closest to x, excluding x itself if it is present in the array.
 
 An element a is closer to x than b if:
 

@@ -1,6 +1,7 @@
 package third;
 /*
-Given two binary arrays a1[] and a2[] of equal length, find the maximum length of a subarray [i...j] such that the sum of elements from i to j in both arrays is equal, i.e.,
+Given two binary arrays a1[] and a2[] of equal length, find the maximum length of a subarray [i...j] such that the sum of elements from i to j
+in both arrays is equal, i.e.,
 a1[i] + a1[i+1] + ... + a1[j] == a2[i] + a2[i+1] + ... + a2[j].
 
 Examples:

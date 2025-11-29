@@ -1,6 +1,8 @@
 package third;
 /*
-Given two strings in lowercase, the task is to make them anagrams. The only allowed operation is to remove a character from any string. Find the minimum number of characters to be deleted to make both the strings anagram. Two strings are called anagrams of each other if one of them can be converted into another by rearranging its letters.
+Given two strings in lowercase, the task is to make them anagrams. The only allowed operation is to remove a character from any string.
+Find the minimum number of characters to be deleted to make both the strings anagram. Two strings are called anagrams of each other if one of
+them can be converted into another by rearranging its letters.
 
 Examples :
 

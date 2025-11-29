@@ -43,7 +43,7 @@ public class ProblemDSA59 {
                 {1, 1, 0, 0, 0, 0, 1, 0, 0, 1}
         };
 
-        System.out.println(solution.DFS(mat, solution.new Point(0, 0), solution.new Point(3, 4)));
+        System.out.println(solution.BFS(mat, solution.new Point(0, 0), solution.new Point(3, 4)));
     }
 }
 
@@ -68,7 +68,7 @@ class SolutionDSA59 {
         }
     }
 
-    public int DFS(int[][] mat, Point src, Point dest) {
+    public int BFS(int[][] mat, Point src, Point dest) {
         if (mat[dest.x][dest.y] == 0 || mat[src.x][src.y] == 0) {
             return -1;
         }

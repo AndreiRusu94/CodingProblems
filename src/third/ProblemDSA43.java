@@ -1,8 +1,11 @@
 package third;
 /*
-Given an array of integers, the task is to find the maximum absolute difference between the nearest left and the right smaller element of every element in the array.
+Given an array of integers, the task is to find the maximum absolute difference between the nearest left and the right smaller element of every
+element in the array.
 
-Note: If there is no smaller element on right side or left side of any element then we take zero as the smaller element. For example for the leftmost element, the nearest smaller element on the left side is considered as 0. Similarly, for rightmost elements, the smaller element on the right side is considered as 0.
+Note: If there is no smaller element on right side or left side of any element then we take zero as the smaller element. For example for the
+leftmost element, the nearest smaller element on the left side is considered as 0. Similarly, for rightmost elements, the smaller element on the
+right side is considered as 0.
 
 Examples:
 

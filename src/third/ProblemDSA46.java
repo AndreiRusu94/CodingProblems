@@ -1,6 +1,7 @@
 package third;
 /*
-Given an input stream s consisting solely of lowercase letters, you are required to identify which character has appeared only once in the stream up to each point. If there are multiple characters that have appeared only once, return the one that first appeared. If no character has appeared only once, append '#' to the result.
+Given an input stream s consisting solely of lowercase letters, you are required to identify which character has appeared only once in the stream up to each point.
+If there are multiple characters that have appeared only once, return the one that first appeared. If no character has appeared only once, append '#' to the result.
 
 Note: For each index i (0 <= i < n), you need to determine the result considering the substring from the start of the stream up to the i-th character.
 

@@ -1,7 +1,7 @@
 package third;
 /*
 You are given a sorted array arr[] containing unique integers, a number k, and a target value x. Your goal is to return exactly k elements from the
- rray that are closest to x, excluding x itself if it is present in the array.
+array that are closest to x, excluding x itself if it is present in the array.
 
 An element a is closer to x than b if:
 
@@ -22,8 +22,6 @@ Explanation: 4 is excluded, Closest elements to 4 are: 3 (1), 1 (3). So, the 2 c
 
 https://www.geeksforgeeks.org/dsa/find-k-closest-elements-given-value/
 */
-
-import java.util.Arrays;
 
 public class ProblemDSA2 {
     public static void main(String[] args) {

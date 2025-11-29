@@ -1,6 +1,7 @@
 package third;
 /*
-Given an array arr[] of integers and an integer k, your task is to find the maximum value for each contiguous subarray of size k. The output should be an array of maximum values corresponding to each contiguous subarray.
+Given an array arr[] of integers and an integer k, your task is to find the maximum value for each contiguous subarray of size k. The output should be an array of maximum
+values corresponding to each contiguous subarray.
 
 Examples :
 

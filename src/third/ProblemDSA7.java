@@ -1,6 +1,7 @@
 package third;
 /*
-Given an integer array arr[], the task is to count the number of subarrays in arr[] that are strictly increasing and have a size of at least 2. A subarray is a contiguous sequence of elements from arr[]. A subarray is strictly increasing if each element is greater than its previous element.
+Given an integer array arr[], the task is to count the number of subarrays in arr[] that are strictly increasing and have a size of at least 2.
+A subarray is a contiguous sequence of elements from arr[]. A subarray is strictly increasing if each element is greater than its previous element.
 
 Examples:
 

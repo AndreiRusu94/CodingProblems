@@ -1,6 +1,7 @@
 package third;
 /*
-Given an array arr[], for each element, find the nearest element to its right that has a higher frequency than the current element. If no such element exists, set the value to -1.
+Given an array arr[], for each element, find the nearest element to its right that has a higher frequency than the current element.
+If no such element exists, set the value to -1.
 
 Examples:
 

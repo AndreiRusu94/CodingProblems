@@ -48,21 +48,18 @@ class SolutionDSA63 {
 
     public int[] dijkstra(int[][] edges, int v, int src) {
         List<List<List<Integer>>> adj = constructAdj(edges, v);
-        PriorityQueue<List<Integer>> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a.get(0)));
+        PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[0]));
 
         int[] dist = new int[v];
         Arrays.fill(dist, Integer.MAX_VALUE);
         dist[src] = 0;
 
-        List<Integer> start = new ArrayList<>();
-        start.add(0);
-        start.add(src);
-
+        int[] start = new int[]{0, src};
         pq.add(start);
 
         while (!pq.isEmpty()) {
-            List<Integer> curr = pq.poll();
-            int u = curr.get(1);
+            int[] curr = pq.poll();
+            int u = curr[1];
 
             for (List<Integer> neighbour : adj.get(u)) {
                 int V = neighbour.get(0);
@@ -70,10 +67,7 @@ class SolutionDSA63 {
 
                 if (dist[V] > dist[u] + weight) {
                     dist[V] = dist[u] + weight;
-                    List<Integer> temp = new ArrayList<>();
-                    temp.add(dist[V]);
-                    temp.add(V);
-                    pq.add(temp);
+                    pq.add(new int[]{dist[V], V});
                 }
             }
         }

@@ -1,8 +1,8 @@
 package third;
 /*
 Number of Islands
-Last Updated : 23 Jul, 2025
-Given an n x m grid of 'W' (Water) and 'L' (Land), the task is to count the number of islands. An island is a group of adjacent 'L' cells connected horizontally, vertically, or diagonally, and it is surrounded by water or the grid boundary. The goal is to determine how many distinct islands exist in the grid.
+Given an n x m grid of 'W' (Water) and 'L' (Land), the task is to count the number of islands. An island is a group of adjacent 'L' cells connected horizontally, vertically,
+or diagonally, and it is surrounded by water or the grid boundary. The goal is to determine how many distinct islands exist in the grid.
 
 Examples:
 

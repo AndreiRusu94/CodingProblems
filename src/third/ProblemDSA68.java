@@ -40,15 +40,17 @@ public class ProblemDSA68 {
 
 class SolutionDSA68 {
 
+    public static final int[] DY = new int[]{-1, -1, -1, 0, 1, 1, 1, 1};
+    public static final int[] DX = new int[]{-1, 0, 1, -1, 1, -1, 0, 1};
+
     public int largestRegion(int[][] m) {
         int largest = 0;
 
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m[0].length; j++) {
                 if (m[i][j] == 1) {
-                    int[] area = new int[]{0};
-                    DFS(m, i, j, area);
-                    largest = Math.max(largest, area[0]);
+                    int area = DFS(m, i, j);
+                    largest = Math.max(largest, area);
                 }
             }
         }
@@ -56,22 +58,22 @@ class SolutionDSA68 {
         return largest;
     }
 
-    private void DFS(int[][] m, int x, int y, int[] area) {
+    private int DFS(int[][] m, int x, int y) {
         if (!isValid(x, y, m.length, m[0].length, m)) {
-            return;
+            return 0;
         }
 
-        int[] dx = {-1, 0, 1, -1, 1, -1, 0, 1};
-        int[] dy = {-1, -1, -1, 0, 1, 1, 1, 1};
         m[x][y] = 0;
-        area[0]++;
+        int area = 1;
 
         for (int i = 0; i < 8; i++) {
-            int newX = dx[i] + x;
-            int newY = dy[i] + y;
+            int newX = DX[i] + x;
+            int newY = DY[i] + y;
 
-            DFS(m, newX, newY, area);
+            area += DFS(m, newX, newY);
         }
+
+        return area;
     }
 
     private boolean isValid(int x, int y, int n, int m, int[][] M) {

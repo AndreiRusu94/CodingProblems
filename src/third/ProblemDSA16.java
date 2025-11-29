@@ -23,7 +23,7 @@ import java.util.Map;
 public class ProblemDSA16 {
     public static void main(String[] args) {
         SolutionDSA16 solution = new SolutionDSA16();
-        System.out.println(solution.cntSubarrays(new int[]{10, 2, -2, -20, 10}, -10));
+        System.out.println(solution.cntSubarrays(new int[]{-10, -20, -10, -20}, -10));
     }
 }
 

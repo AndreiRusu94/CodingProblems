@@ -1,6 +1,7 @@
 package third;
 /*
-Given a string str, the task is to find the substring of length K which occurs the maximum number of times. If more than one string occurs maximum number of times, then print the lexicographically smallest substring.
+Given a string str, the task is to find the substring of length K which occurs the maximum number of times. If more than one string occurs maximum number of times,
+then print the lexicographically smallest substring.
 
 Examples:
 

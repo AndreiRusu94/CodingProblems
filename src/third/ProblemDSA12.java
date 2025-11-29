@@ -1,6 +1,7 @@
 package third;
 /*
-Given an array arr[], Find the prefix sum of the array. A prefix sum array is another array prefixSum[] of the same size, such that prefixSum[i] is arr[0] + arr[1] + arr[2] . . . arr[i].
+Given an array arr[], Find the prefix sum of the array. A prefix sum array is another array prefixSum[] of the same size, such that prefixSum[i]
+is arr[0] + arr[1] + arr[2] . . . arr[i].
 
 Examples:
 
