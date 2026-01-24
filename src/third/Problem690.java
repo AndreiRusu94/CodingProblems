@@ -41,6 +41,7 @@ public class Problem690 {
         emp3.subordinates = List.of();
         List<Solution690.Employee> employees = List.of(emp1, emp2, emp3);
         System.out.println(solution.getImportance(employees, 1));
+        System.out.println(solution.getImportanceDFS(employees, 1));
     }
 }
 
@@ -78,6 +79,26 @@ class Solution690 {
         }
 
         return importance.get(id);
+    }
+
+    public int getImportanceDFS(List<Employee> employees, int id) {
+        Map<Integer, Employee> empMap = new HashMap<>();
+        for (Employee e : employees) {
+            empMap.put(e.id, e);
+        }
+
+        return getImportanceDFS(empMap, id);
+    }
+
+    public int getImportanceDFS(Map<Integer, Employee> empMap, int id) {
+        Employee root = empMap.get(id);
+
+        int total = root.importance;
+        for (int subId : root.subordinates) {
+            total += getImportanceDFS(empMap, subId);
+        }
+
+        return total;
     }
 
 }
