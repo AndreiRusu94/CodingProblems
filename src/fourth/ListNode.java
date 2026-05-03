@@ -2,11 +2,11 @@ package fourth;
 
 
 public class ListNode {
-    int val;
+    private int val;
     ListNode next;
 
     public ListNode(int x) {
-        this.val = x;
+        this.setVal(x);
     }
 
     public static ListNode createListNode(int[] values) {
@@ -27,17 +27,25 @@ public class ListNode {
 
     public static void outputListNode(ListNode node) {
         while (node != null) {
-            System.out.println(node.val);
+            System.out.println(node.getVal());
             node = node.next;
         }
     }
 
     public static void displayListNode(ListNode node) {
         while (node != null) {
-            System.out.print(node.val + " ");
+            System.out.print(node.getVal() + " ");
             node = node.next;
         }
 
         System.out.println();
+    }
+
+    public int getVal() {
+        return val;
+    }
+
+    public void setVal(int val) {
+        this.val = val;
     }
 }
