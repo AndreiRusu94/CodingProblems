@@ -16,25 +16,30 @@ Output: 9
 public class ProblemNC53 {
     public static void main(String[] args) {
         SolutionNC53 solution = new SolutionNC53();
-        System.out.println(solution.maxArea(new int[]{2, 4, 4, 5, 5, 8}));
+        System.out.println(solution.trap(new int[]{0,2,0,3,1,0,1,3,2,1}));
     }
 }
 
 class SolutionNC53 {
 
-    public int maxArea(int[] heights) {
-        int maxArea = 0;
-        int l = 0, r = heights.length - 1;
+    public int trap(int[] height) {
+        int l = 0, r = height.length - 1;
+        int leftMax = height[0], rightMax = height[height.length - 1];
+        int output = 0;
+
         while (l < r) {
-            maxArea = Math.max(maxArea, (r - l) * Math.min(heights[l], heights[r]));
-            if (heights[l] < heights[r]) {
+            if (leftMax < rightMax) {
                 l++;
+                leftMax = Math.max(leftMax, height[l]);
+                output += leftMax - height[l];
             } else {
                 r--;
+                rightMax = Math.max(rightMax, height[r]);
+                output += rightMax - height[r];
             }
         }
 
-        return maxArea;
+        return output;
     }
 
 }
