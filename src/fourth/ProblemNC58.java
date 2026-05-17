@@ -20,7 +20,6 @@ Output: 6
 The key insight is that if prefixSum[j] - prefixSum[i] = k, then the subarray from index i+1 to j has sum k
 */
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
